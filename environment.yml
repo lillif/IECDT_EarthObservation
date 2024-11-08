@@ -19,6 +19,6 @@ dependencies:
   - torchvision
   - torchmetrics
   - matplotlib
-  - sklearn
+  - scikit-learn
   - seaborn
   - cartopy
