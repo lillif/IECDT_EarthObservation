@@ -22,3 +22,7 @@ dependencies:
   - scikit-learn
   - seaborn
   - cartopy
+  - pip:
+    - autoroot
+    - pre-commit
+    - loguru
