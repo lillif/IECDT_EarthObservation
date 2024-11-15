@@ -11,7 +11,7 @@ dependencies:
   - numpy
   - xarray
   - pandas
-  - pip
+  - geopandas
   - ipykernel
   - scipy
   - pytorch
@@ -22,6 +22,7 @@ dependencies:
   - scikit-learn
   - seaborn
   - cartopy
+  - pip
   - pip:
     - autoroot
     - pre-commit
