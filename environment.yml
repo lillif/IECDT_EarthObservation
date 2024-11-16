@@ -23,6 +23,4 @@ dependencies:
   - seaborn
   - cartopy
   - pip:
-    - autoroot
-    - pre-commit
     - loguru
