@@ -2,7 +2,7 @@
 
 ## Installation
 
-Run the following commands to create the fdl-sar-env environment:
+Run the following commands to create the iecdt-earth-obs environment:
 
 ```bash
 conda env create -f environment.yml

@@ -62,8 +62,7 @@ def create_timeseries_dataset(df: pd.DataFrame,
     """
     X, y, y_dates = [], [], []
     
-    # Ensure 'date' is datetime and sort by date
-    df['date'] = pd.to_datetime(df['date'])
+    # Sort by date to ensure chronological order
     df = df.sort_values(by='date').reset_index(drop=True)
     
     # Group by year and month to avoid sequences spanning multiple months
