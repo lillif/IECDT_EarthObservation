@@ -22,3 +22,11 @@ dependencies:
   - scikit-learn
   - seaborn
   - cartopy
+  - geopandas
+  - rioxarray
+  - shapely
+  - rasterio
+  - pip:
+      - tensorboard
+      - tensorboardX
+      - contextily
