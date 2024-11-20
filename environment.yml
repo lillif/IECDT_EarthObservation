@@ -22,6 +22,8 @@ dependencies:
   - scikit-learn
   - seaborn
   - cartopy
+  - tensorboard
+  - satpy
   - pip
   - pip:
     - autoroot
