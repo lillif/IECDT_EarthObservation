@@ -3,11 +3,11 @@
 # or if you really want to use conda
 # conda env create -f environment.yml
 
-name: iecdt-earth-obs
+name: iecdt-earth-observation
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.11
   - numpy
   - xarray
   - pandas
@@ -27,6 +27,8 @@ dependencies:
   - shapely
   - rasterio
   - pip:
-      - tensorboard
-      - tensorboardX
-      - contextily
+    - netcdf4
+    - h5netcdf
+    - tensorboard
+    - tensorboardX
+    - contextily
