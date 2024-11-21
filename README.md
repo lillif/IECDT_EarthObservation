@@ -1,7 +1,7 @@
 # IECDT AI for Earth Observation Computing Lab
 
 ## Installing the Environment and Kernel on JASMIN
-To install the `iecdt-earth-observation` environment and create a Jupyter kernel to use on JupyterHub, run the following command on JASMIN:
+To install the `iecdt-earth-observation` environment and create a Jupyter kernel to use on JASMIN's JupyterHub, run the following command on JASMIN:
 
 ```bash
 chmod u+x setup.sh
