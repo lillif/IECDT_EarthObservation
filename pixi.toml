@@ -1,0 +1,51 @@
+# pixi configuration equivalent to the `iecdt-earth-observation` conda
+# environment defined in environment.yml.
+#
+# Usage:
+#   pixi install                                                          # create/update .pixi/envs/default
+#   pixi run python -m ipykernel install --user --name=iecdt-earth-observation
+#   pixi run jupyter lab
+#   pixi shell                                                            # interactive shell with the env activated
+#
+# (On pixi versions older than 0.39, rename [workspace] to [project].)
+
+[workspace]
+name = "iecdt-earth-observation"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[dependencies]
+python = "3.13.*"
+numpy = "*"
+xarray = "*"
+pandas = "*"
+geopandas = "*"
+ipykernel = "*"
+scipy = "*"
+pytorch = "*"
+lightning = "*"
+torchvision = "*"
+torchmetrics = "*"
+matplotlib = "*"
+scikit-learn = "*"
+scikit-image = "*"
+seaborn = "*"
+cartopy = "*"
+tensorboard = "*"
+satpy = "*"
+rioxarray = "*"
+shapely = "*"
+rasterio = "*"
+
+# Packages that were listed under `pip:` in environment.yml.
+# (tensorboard was listed in both sections there; it is kept as a conda
+# dependency only, since pixi lets PyPI packages override conda ones.)
+[pypi-dependencies]
+netcdf4 = "*"
+h5netcdf = "*"
+tensorboardx = "*"
+contextily = "*"
+
+[tasks]
+# Mirror setup.sh: register the environment as a Jupyter kernel.
+kernel = "python -m ipykernel install --user --name=iecdt-earth-observation"

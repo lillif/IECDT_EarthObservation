@@ -1,0 +1,58 @@
+# uv configuration equivalent to the `iecdt-earth-observation` conda environment
+# defined in environment.yml.
+#
+# Usage:
+#   uv sync                                                            # create .venv and install all dependencies
+#   uv run python -m ipykernel install --user --name=iecdt-earth-observation
+#   uv run jupyter lab                                                 # or any other command, run inside the env
+#
+# Note: conda-forge package names that differ on PyPI are mapped below
+# (pytorch -> torch). Everything else keeps the same name.
+
+[project]
+name = "iecdt-earth-observation"
+version = "0.1.0"
+description = "IECDT AI for Earth Observation computing lab environment (uv equivalent of environment.yml)"
+readme = "README.md"
+requires-python = "==3.13.*"
+dependencies = [
+    "numpy",
+    "xarray",
+    "pandas",
+    "geopandas",
+    "ipykernel",
+    "scipy",
+    "torch",          # conda-forge: pytorch
+    "lightning",
+    "torchvision",
+    "torchmetrics",
+    "matplotlib",
+    "scikit-learn",
+    "scikit-image",
+    "seaborn",
+    "cartopy",
+    "tensorboard",
+    "satpy",
+    "rioxarray",
+    "shapely",
+    "rasterio",
+    # the following were in the pip section of environment.yml
+    "netcdf4",
+    "h5netcdf",
+    "tensorboardx",   # conda-forge pip name: tensorboardX
+    "contextily",
+]
+
+[tool.uv]
+# conda-forge's `pytorch` is the CPU build by default, so source torch and
+# torchvision from the CPU-only wheel index to match (and avoid multi-GB
+# CUDA downloads). Remove this index and the [tool.uv.sources] section below
+# to use the default PyPI wheels (CUDA-enabled torch on Linux).
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+torchvision = [{ index = "pytorch-cpu" }]

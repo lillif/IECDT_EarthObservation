@@ -34,3 +34,21 @@ conda env create -f environment.yml
 
 conda activate iecdt-earth-observation
 ```
+
+### Alternative: uv or pixi
+
+Equivalent environment definitions are provided for [uv](https://docs.astral.sh/uv/) (`pyproject.toml` + `uv.lock`) and [pixi](https://pixi.sh/) (`pixi.toml`), alongside `environment.yml`.
+
+With uv:
+
+```bash
+uv sync
+uv run python -m ipykernel install --user --name=iecdt-earth-observation
+```
+
+With pixi:
+
+```bash
+pixi install
+pixi run kernel   # registers the environment as a Jupyter kernel (as in setup.sh)
+```
